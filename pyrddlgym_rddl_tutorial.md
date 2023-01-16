@@ -399,7 +399,7 @@ Then, max-nondef-actions specifies the number of actions in a domain that can be
 ```
 61  max-nondef-actions = 1;
 ```
-In the end, s ince the objective evaluated byRDDL is the expected sum of discounted rewards over a number of steps, both the number of steps and the discount must be specified in the instance block. The number of steps or actions taken is called the *horizon*, and in this example the horizon is set to 40, which indicates that the domain will be simulated for 40 time steps. The discount is set to 1, stipulating that the value of reward remains constant at every iteration.
+In the end, since the objective evaluated by RDDL is the expected sum of discounted rewards over a number of steps, both the number of steps and the discount must be specified in the instance block. The number of steps or actions taken is called the *horizon*, and in this example the horizon is set to 40, which indicates that the domain will be simulated for 40 time steps. The discount is set to 1, stipulating that the value of reward remains constant at every iteration.
 ```
 62  horizon  = 40;
 63  discount = 1.0;
