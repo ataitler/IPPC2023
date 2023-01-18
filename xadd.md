@@ -158,8 +158,8 @@ The domain we want to look at is the [UAV mixed](/uav.md) domain and the instanc
 If we follow the same procedure described above for the Wildfire domain with the domain name being replaced by `'UAV mixed'`, then we can compile the domain/instance in XADD. The overall DBN (dynamic Bayes net) structure of this instance is shown below.
 
 <div style="width:100%;text-align:center;">
-  <a href="images/UAV mixed_inst_0.png">
-    <img src="images/UAV mixed_inst_0.png" height="300" width="269" />
+  <a href="images/UAV_mixed_inst_0.png">
+    <img src="images/UAV_mixed_inst_0.png" height="300" width="269" />
   </a>
 </div>
 
