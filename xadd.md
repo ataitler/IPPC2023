@@ -149,7 +149,51 @@ How will the graph look like for `out-of-fuel'(x1, y1)` variable? Here's the res
 
 Very neat!
 
-Now, you can go ahead and use this functionality to analyze a given RDDL instance.
+## XADD compilation of a domain with mixed continuous / discrete variables
+
+Although the Wildfire example nicely shows how XADD can be used to represent the CPFs of the domain, it only contains Boolean variables. In this part, we will show another example domain that has continuous fluents.
+
+The domain we want to look at is the [UAV mixed](/uav.md) domain and the instance file is provided [here](https://github.com/ataitler/pyRDDLGym/tree/main/pyRDDLGym/Examples/UAV/Mixed/instance0.rddl).
+
+If we follow the same procedure described above for the Wildfire domain with the domain name being replaced by `'UAV mixed'`, then we can compile the domain/instance in XADD. The overall DBN (dynamic Bayes net) structure of this instance is shown below.
+
+<div style="width:100%;text-align:center;">
+  <a href="images/UAV mixed_inst_0.png">
+    <img src="images/UAV mixed_inst_0.png" height="300" width="269" />
+  </a>
+</div>
+
+Specifically, let's print out the CPF of `vel'(?a1)`, which is 
+```
+( [set_acc_a1 - 1 <= 0]
+        ( [set_acc_a1 + 1 <= 0]
+                ( [vel_a1 - 0.1 <= 0]
+                        ( [0] )
+                        ( [vel_a1 - 0.1] )
+                )  
+                ( [1.0*set_acc_a1 + 10.0*vel_a1 <= 0]
+                        ( [0] )
+                        ( [0.1*set_acc_a1 + vel_a1] )
+                )  
+        )  
+        ( [vel_a1 + 0.1 <= 0]
+                ( [0] )
+                ( [vel_a1 + 0.1] )
+        )  
+)
+```
+When visualized with `pygraphviz`, we get the following:
+
+<div style="width:100%;text-align:center;">
+  <a href="images/UAV_mixed_inst0_vel_a1.png">
+    <img src="images/UAV_mixed_inst0_vel_a1.png" height="208" width="300" />
+  </a>
+</div>
+
+In this case, you can see that the decision nodes have linear inequlity expressions instead of a Boolean decision. As for the function values at the leaf nodes, they are also linear expressions. `xaddpy` package can also handle arbitrary nonlinear decisions and function values using SymPy under the hood. 
+
+
+Now, you can go ahead and use this functionality to analyze a given RDDL instance!
 
 <hr>
 [Back to main page](index.md)
