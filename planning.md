@@ -8,7 +8,7 @@ pyRDDLGym comes with a set of tools and utilities to support planning and visual
 - [Movie Generation](/videos.md)
 
 ### Baselines
-- Planning by Backprop
+- [Planning by Backprop](/backprop.md)
 - PROST
 
 <hr>
