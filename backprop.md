@@ -163,7 +163,15 @@ print(f'episode ended with reward {total_reward}')
 myEnv.close()
 ```
 
-This produces the following:
+The visualization of this plan is provided below:
+
+<div style="width:100%;text-align:center;">
+  <a href="images/backprop/WildfirePlan.gif">
+    <img src="images/backprop/WildfirePlan.gif" height="190" width="190" />
+  </a>
+</div>
+
+The total reward calculation can also be found by inspecting the printout:
 
 ```
 step       = 0
@@ -251,8 +259,8 @@ total_reward += reward
 update the environment with the current action and the total reward accumulated. The visualization of this plan is provided below:
 
 <div style="width:100%;text-align:center;">
-  <a href="images/backprop/WildfireOpt.gif">
-    <img src="images/backprop/WildfireOpt.gif" height="190" width="190" />
+  <a href="images/backprop/WildfireReplan.gif">
+    <img src="images/backprop/WildfireReplan.gif" height="190" width="190" />
   </a>
 </div>
 
