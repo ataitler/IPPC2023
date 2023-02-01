@@ -248,7 +248,15 @@ total_reward += reward
 ...
 ```
 
-update the environment with the current action and the total reward accumulated. The final print-out looks like this:
+update the environment with the current action and the total reward accumulated. The visualization of this plan is provided below:
+
+<div style="width:100%;text-align:center;">
+  <a href="images/backprop/WildfireOpt.gif">
+    <img src="images/backprop/WildfireOpt.gif" height="190" width="190" />
+  </a>
+</div>
+
+The final print-out looks like this:
 
 ```
 step       = 0
@@ -268,7 +276,7 @@ reward     = 0.0
 episode ended with reward -75.0
 ```
 
-Therefore, re-planning achieves a much better total reward than the open-loop plan obtained earlier.
+Therefore, re-planning achieves a much better total reward than the open-loop plan obtained earlier. 
 
 <hr>
 [Back to main page](index.md)
