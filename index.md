@@ -27,8 +27,8 @@ We invite interested competitors to join the competition discussion:
 |:----------------------------------------------|:-----------------|
 | Infrastructure release with sample domains    | October, 2022    |
 | Call for domains and praticipants             | October, 2022    |
-| Final domains announcement                    | December, 2022   |
-| Competitors registration                      | January, 2023    |
+| Final domains announcement                    | February, 2022   |
+| Competitors registration                      | March, 2023      |
 | Planner abstract dubmission                   | May, 2023        |
 | Contest run                                   | June, 2023       |
 | Results announced                             | July, 2023       |
