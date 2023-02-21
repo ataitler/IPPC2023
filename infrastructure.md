@@ -268,6 +268,30 @@ myEnv = RDDLEnv.RDDLEnv(domain='myDomain.rddl', instance='myInstance.rddl')
 myEnv.set_visualizer(MyDomainViz)
 ```
 
+By default, calling `EnvInfo.get_visualizer()` on a domain without a dedicated visualizer sub-class 
+will return a `Visualizer.TextViz.TextVisualizer()` instance, which simply prints a textual representation
+of the state. An alternative `ChartVisualizer` is also available to better track the evolution of the fluents over time.
+Like the textual visualizer, this viz handles both continuous and discrete fluent variables:
+- scatter plots are used for discrete/categorical variables
+- line plots are used for continuous variables
+- heatmaps are used for boolean variables
+
+It can be instantiated as simply as follows:
+
+```python
+from pyRDDLGym import RDDLEnv
+from pyRDDLGym.Visualizer.ChartViz import ChartVisualizer
+
+myEnv = RDDLEnv.RDDLEnv(domain='myDomain.rddl', instance='myInstance.rddl')
+
+# set up the graphical visualizer
+myEnv.set_visualizer(ChartVisualizer)
+```
+
+and when running on the wildfire domain, produces the following:
+
+![](images/wildfire_graph.gif "Wildfire Graphical Visualization")
+
 ### Custom user defined domains
 
 Writing new user defined domains is as easy as writing a few lines of text in a mathematical fashion!
