@@ -127,22 +127,24 @@ Note, that there are additional domains out there from past competitions (IPPC 2
 - [IPPC 2011 domains](https://github.com/ssanner/rddlsim/tree/master/files/final_comp/rddl): This repository contains 8 domains: Elevators, Cross Traffic (Frogger), Game of Life, Navigation, Reconnaissance, Skill Teaching, SysAdmin, Traffic. 
 - [IPPC 2014 domains](https://github.com/ssanner/rddlsim/tree/master/files/final_comp_2014/rddl): This repository contains some of IPPC 2011 domains, with additional 4 new domains: Tamarisk (Invasive Species), Wildfire (Firefighting), Academic Advising, Triangle Tireword.
 
-Past compeition were entirely discrete and as the focus of this year is continous and mix discrete-continous problems, their domains were not included in the pyRDDLGym repository. However everybody are welcome to take advantage of their existence. Just make sure they do not make use of something outside of pyRDDLGym RDDL subset. In that case the original [Java simulator](https://github.com/ssanner/rddlsim) can be used.
+Past competitions were entirely discrete; the focus of this year’s competition is on continuous and mixed discrete-continuous problems. However, everybody are welcome to take advantage of their existance. All previous competition domains are avilavble through the [rddlrepository](https://github.com/ataitler/rddlrepository) package/git.
+
+<!--Past compeition were entirely discrete and as the focus of this year is continous and mix discrete-continous problems, their domains were not included in the pyRDDLGym repository. However everybody are welcome to take advantage of their existence. Just make sure they do not make use of something outside of pyRDDLGym RDDL subset. In that case the original [Java simulator](https://github.com/ssanner/rddlsim) can be used. -->
 
 ## Procedure
 
 All competitors must submit an up to 2 pages abstract, describing their method. The compatitors must also submit the source code of their method to be examined (and may be run) by the organizers of the competition. An important requirement for IPC 2023 competitors is to give the organizers the right to post their paper and the source code of their learners/planners on the official IPC 2023 web site, and the source code of submitted planners must be released under a license allowing free non-commercial use.
 
 The competition will take place Mon-Thu June 5 - June 8 2023. The competition will be comprised of two phases.
-- Training phase: During the two months before the competition, the competitors will train and get ready to compete. The RDDL sources for the domains and at least one instance per domains will be available during the whole period. In addition, instance generators will also be released after the registration deadline.
-- Evaluation phase: during the week starting at June 5th, at the beginning of each day 2 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container before the end of the 24 hours window.
+- __Training phase__: During the two months before the competition, the competitors will train and get ready to compete. The RDDL sources for the domains and at least one instance per domains will be available during the whole period. In addition, instance generators will also be released after the registration deadline.
+- __Evaluation phase__: during the week starting at June 5th, at the beginning of each day 2 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container before the end of the 24 hours window.
 
 ### Domains
 The competition will include:
 - 8 domains (two will be release each day)
 - 5 instances per domain
 
-| domain                | pyRDDLGym name         |
+| Domain                | pyRDDLGym name         |
 |:----------------------|:-----------------------|
 | Race Car              |  RaceCar               |
 | Reservoir Control     |  Reservoir continuous  |
