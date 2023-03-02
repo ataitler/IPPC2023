@@ -233,7 +233,7 @@ Registration for the competition is now open. Please register at the following l
 
 The registration will be closed on March 15, 2023. If you missed the deadline and wish to compete please contact one of the organizers (Ayal Taitler or Scott Sanner).
 
-
+ 
 
 
 ## Organizers
