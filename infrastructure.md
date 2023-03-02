@@ -43,22 +43,29 @@ pyRDDLSim is a generic autogeneration simulator from RDDL files to OpenAI Gym en
 Please see our [paper](https://arxiv.org/abs/2211.05939) describing pyRDDLGym.
 
 ## Status 
-pyRDDLSim implements a large subset of the full RDDL capabilities, with additional new capabilities not originaly present in RDDL.
+pyRDDLGym supports a major subset of the original RDDL language:
+* [RDDL](https://users.cecs.anu.edu.au/~ssanner/IPPC_2011/RDDL.pdf)
 
-What listed bellow is a list of what we currently do not support:
-* state-action-constraints -- deprecated in favor of state-invariants and action-preconditions (RDDL2.0).
-* action-preconditions are not enforced by the environment, and should be incorporated into the cpfs definitions.
-* action-preconditions of structure of `action <= BOUND` and `action >= BOUND`
-where BOUND is deterministic-function (can be of constants or non-fluents),
-are supported for the porpuse of gym spaces definitions.
-* General action-preconditions can still be specified in the rddl file for the benefit of reasoning in planners.
-* enums
+The following components are omitted (or marked as deprecated) from the language variant implemented in pyRDDLGym:
+* derived-fluent are supported by the framework as described in the language description. However, they are considered deprecated and will be removed from future versions.
+* Fluent levels are deprecated and are reasoned automatically by the framework, specifying levels explicitly is not required.
+* state-action-constraint is not implemented and is considered deprecated in the language to avoid ambiguity. Only the newer syntax of specifying state-invariants and action-preconditions is supported.
 
-We have extended the RDDL language and also support the following:
-* Automatic reasoning of levels. Levels are no longer required (and ignored by the infrastructure).
+Additional components and structures have been added to the language to increase expressivity, and to accommodate learning interaction type. These are listed here:
 * Terminal states can now be explicitly defined. The termination block has been added to the language.
-
-All other features of RDDL are supported according to the language definition.
+* action-preconditions are implemented according to the original language description.
+However, they are subject to the user preference. By default the framework _does not_ enforce the expressions in the action-preconditions block,
+thus, upon violation a warning will be printed to the user and the simulation will push the actions inside the legal space by using the default value and the simulation will continue. 
+To ensure correct behaviour it is expected from the domain designer to include the appropriate logic of how to handle an invalid action within the _cpfs_ block.
+In the case where the user does choose to enforce action-preconditions, the simulation will be interrupted and an appropriate exception will be thrown.
+* Direct Inquiry of variable (states/action) domains is supported through the standard action\_space and state\_space properties of the environment.
+In order for this functionality to work correctly, the domain designer is required to specify each (lifted-)variable bounds within the 
+action-preconditions block in the format "_fluent_ OP BOUND" where OP \in {<,>,>=,<=}, and BOUND is a deterministic function of the problem parameter to be evaluated at instantiation.
+* Parameter inequality is supported for lifted types. I.e., the following expression ?p == ?r can be evaluated to True or False.
+* Nested indexing is now supported, e.g., fluent'(?p,?q) = NEXT(fluent(?p, ?q)).
+* Vectorized distributions such as Multivariate normal, Student, Dirichlet, and Multinomial are now supported.
+* Basic matrix algebra such as determinant and inverse operation are supported for two appropriate fluents.
+* _argmax_ and _argmin_ are supported over enumerated types (enums).
 
 ## Getting started
 There are two options at the moment to obtain the pyRDDLGym infrstructure
