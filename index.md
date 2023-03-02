@@ -31,7 +31,7 @@ We invite interested competitors to join the competition discussion:
 | Competitors registration deadline             | March 15, 2023   |
 | Planner abstract dubmission                   | May 1, 2023      |
 | Contest run                                   | June 5-8, 2023   |
-| Results announced                             | July, 2023       |
+| Results announced                             | July 12, 2023    |
 
 
 
