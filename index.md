@@ -133,11 +133,11 @@ Past competitions were entirely discrete; the focus of this year’s competition
 
 ## Procedure
 
-All competitors must submit an up to 2 pages abstract, describing their method. The compatitors must also submit the source code of their method to be examined (and may be run) by the organizers of the competition. An important requirement for IPC 2023 competitors is to give the organizers the right to post their paper and the source code of their learners/planners on the official IPC 2023 web site, and the source code of submitted planners must be released under a license allowing free non-commercial use.
+All competitors must submit an up to 2 pages abstract, describing their method. The competitors must also submit the source code of their method to be examined (and may be run) by the organizers of the competition. An important requirement for IPC 2023 competitors is to give the organizers the right to post their paper and the source code of their learners/planners on the official IPC 2023 web site, and the source code of submitted planners must be released under a license allowing free non-commercial use.
 
 The competition will take place Mon-Thu June 5 - June 8 2023. The competition will be comprised of two phases.
 - __Training phase__: During the two months before the competition, the competitors will train and get ready to compete. The RDDL sources for the domains and at least one instance per domains will be available during the whole period. In addition, instance generators will also be released after the registration deadline.
-- __Evaluation phase__: during the week starting at June 5th, at the beginning of each day 5 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container before the end of the 24 hours window.
+- __Evaluation phase__: during the week starting at June 5th, at the beginning of each day 5 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container (per domain) before the end of the 24 hours window.
 
 ### Domains
 The competition will include:
@@ -156,14 +156,18 @@ The competition will include:
 | Mars Rover            |  MarsRover             |
 
 
-
 ### Evaluation and Score
-The methods will be evaluated on all the competition domains and instances. Expect evaluation submission with 24 hours, on their own hardware with self-reported specs. All methods will be evaluated on an 8 CPU computer with 32 GB of memory. Each instance will be evaluated for 50 trails and the average will be taken. Typical horizon will be around 100 steps.
+The methods will be evaluated on the 8 competition domains and the 5 instances released during the competition week. Expect evaluation submission with 24 hours, on their own hardware with self-reported specs, containers for each domain should not exceed 2GB. All methods will be evaluated on an 8 CPU computer with 32 GB of memory. Each instance will be evaluated for 50 trails, and each trail will be given a maximum of 2 minutes, the average over all 50 trails will be taken as the score for that instance. Typical horizon will be around 100 steps.
 
 All results will be normalized according to
 - 0: max(noop, random).
-- 1: baseline such as Jaxplanner or best competing method to ensure values [0,1].
+- 1: Jaxplanner or best competing method to ensure values [0,1].
 
+Normalization will be done per instance.
+
+### Results
+
+We will report the results per instance, per domain, and overall. In addition we will release the traces of all trails for the competitors benefit to analyze.
  
 <!--- ### Procedure
 The competition will be comprised of two phases.
