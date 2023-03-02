@@ -157,13 +157,15 @@ The competition will include:
 
 
 ### Evaluation and Score
-The methods will be evaluated on the 8 competition domains and the 5 instances released during the competition week. Expect evaluation submission with 24 hours, on their own hardware with self-reported specs, containers for each domain should not exceed 2GB. All methods will be evaluated on an 8 CPU computer with 32 GB of memory. Each instance will be evaluated for 50 trails, and each trail will be given a maximum of 2 minutes, the average over all 50 trails will be taken as the score for that instance. Typical horizon will be around 100 steps.
+The methods will be evaluated on the 8 competition domains and the 5 instances released during the evaluation phase. Expect evaluation submission with 24 hours, on their own hardware with self-reported specs, containers for each domain should not exceed 2GB. All methods will be evaluated on an 8 CPU computer with 32 GB of memory. Each instance will be evaluated for 50 trails, and each trail will be given a maximum of 2 minutes, the average over all 50 trails will be taken as the score for that instance. Typical horizon will be around 100 steps.
 
 All results will be normalized according to
 - 0: max(noop, random).
 - 1: Jaxplanner or best competing method to ensure values [0,1].
 
 Normalization will be done per instance.
+
+Detailed instruction on how to upload the containers will be release closer to the date of the evaluation phase.
 
 ### Results
 
