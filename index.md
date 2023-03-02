@@ -27,10 +27,10 @@ We invite interested competitors to join the competition discussion:
 |:----------------------------------------------|:-----------------|
 | Infrastructure release with sample domains    | October, 2022    |
 | Call for domains and praticipants             | October, 2022    |
-| Final domains announcement                    | February, 2023   |
-| Competitors registration                      | March, 2023      |
-| Planner abstract dubmission                   | May, 2023        |
-| Contest run                                   | June, 2023       |
+| Final domains announcement                    | March 2, 2023    |
+| Competitors registration deadline             | March 15, 2023   |
+| Planner abstract dubmission                   | May 1, 2023      |
+| Contest run                                   | June 5-8, 2023   |
 | Results announced                             | July, 2023       |
 
 
@@ -129,25 +129,51 @@ Note, that there are additional domains out there from past competitions (IPPC 2
 
 Past compeition were entirely discrete and as the focus of this year is continous and mix discrete-continous problems, their domains were not included in the pyRDDLGym repository. However everybody are welcome to take advantage of their existence. Just make sure they do not make use of something outside of pyRDDLGym RDDL subset. In that case the original [Java simulator](https://github.com/ssanner/rddlsim) can be used.
 
-## Evaluation
-The exact details of the evaluation process are still in discussion (to be able to accommodate planning and learning approaches).
-Please add your thoughts to the discussion already underway in the Google group.
+## Procedure
+
+All competitors must submit an up to 2 pages abstract, describing their method. The compatitors must also submit the source code of their method to be examined (and may be run) by the organizers of the competition. An important requirement for IPC 2023 competitors is to give the organizers the right to post their paper and the source code of their learners/planners on the official IPC 2023 web site, and the source code of submitted planners must be released under a license allowing free non-commercial use.
+
+The competition will take place Mon-Thu June 5 - June 8 2023. The competition will be comprised of two phases.
+- Training phase: During the two months before the competition, the competitors will train and get ready to compete. The RDDL sources for the domains and at least one instance per domains will be available during the whole period. In addition, instance generators will also be released after the registration deadline.
+- Evaluation phase: during the week starting at June 5th, at the beginning of each day 2 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container before the end of the 24 hours window.
 
 ### Domains
 The competition will include:
-- 8 domains
+- 8 domains (two will be release each day)
 - 5 instances per domain
+
+| domain                | pyRDDLGym name         |
+|:----------------------|:-----------------------|
+| Race Car              |  RaceCar               |
+| Reservoir Control     |  Reservoir continuous  |
+| Recommender Systems   |  RecSim                |
+| HVAC                  |  HVAC                  |
+| UAV                   |  UAV continuous        |
+| Power Generation      |  PowerGen continuous   |
+| Mountain Car          |  MountainCar           |
+| Mars Rover            |  MarsRover             |
+
+
+
+### Evaluation and Score
+The methods will be evaluated on all the competition domains and instances. Expect evaluation submission with 24 hours, on their own hardware with self-reported specs. All methods will be evaluated on an 8 CPU computer with 32 GB of memory. Each instance will be evaluated for 50 trails and the average will be taken. Typical horizon will be around 100 steps.
+
+All results will be normalized according to
+- 0: max(noop, random).
+- 1: baseline such as Jaxplanner or best competing method to ensure values [0,1].
+
  
-### Procedure
+<!--- ### Procedure
 The competition will be comprised of two phases.
 - Training phase: a week before the competition day, 3 evaluation instances of each domain will be released. For competitors to train/evaluate their methods on.
 - Evaluation phase: at the end of the week, each competitor will have a designated time and IP for a cloud resource. The competitors will connect, set up their solutions (the time for that will be taken into consideration), and execute their solutions 10 times for each instance. The average reward over these 10 runs will be the score for the instance. During evaluation, an additional 2 never seen before instances will be evaluated (in addition to the 3 already-released instances). I.e., 5 instances for each domain, 10 runs per instance.
+
 
 ### Score
 For each instance, the total reward will be normalized to the range [0,1], and the winner is the competitor who achieves the highest total score.
 (The minimum score for the competition will be 0 and the maximum will be 40)
 The fine details are subject to discussion in the google-group and will be finalized by the end of January.
-
+--->
 <!-- but the general lines will follow the evaluation of the past [IPPC 2011](http://users.cecs.anu.edu.au/~ssanner/IPPC_2011/index.html) competition. 
 
 Domains (note numbers might change this year)
@@ -193,7 +219,12 @@ In addition we intend to make the following changes to the 2011 evaluation (subj
 3. We're considering using strong manual baseline policies for max normalization (hence scores will not necessarily be in [0,1]) <!-- to deal with the issues raised in Jendrik's paper. -->
 
 ## Registration
-At this point just join the google group (see link at the bottom) and announce your interest to compete in a post that includes your tentative team name, organization, and team members.
+<!--- At this point just join the google group (see link at the bottom) and announce your interest to compete in a post that includes your tentative team name, organization, and team members. --->
+Registration for the competition is now open. Please register at the following link:
+[Registration form](https://forms.gle/W9ng4v3vciNcc9S27)
+
+The registration will be closed on March 15, 2023. If you missed the deadline and wish to compete please contact one of the organizers (Ayal Taitler or Scott Sanner).
+
 
 
 
