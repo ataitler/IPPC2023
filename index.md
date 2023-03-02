@@ -137,7 +137,7 @@ All competitors must submit an up to 2 pages abstract, describing their method. 
 
 The competition will take place Mon-Thu June 5 - June 8 2023. The competition will be comprised of two phases.
 - __Training phase__: During the two months before the competition, the competitors will train and get ready to compete. The RDDL sources for the domains and at least one instance per domains will be available during the whole period. In addition, instance generators will also be released after the registration deadline.
-- __Evaluation phase__: during the week starting at June 5th, at the beginning of each day 2 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container before the end of the 24 hours window.
+- __Evaluation phase__: during the week starting at June 5th, at the beginning of each day 5 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container before the end of the 24 hours window.
 
 ### Domains
 The competition will include:
