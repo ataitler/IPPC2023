@@ -167,7 +167,10 @@ Normalization will be done per instance.
 
 Detailed instruction on how to upload the containers will be release closer to the date of the evaluation phase.
 
+### Results
 
+We will report the results per instance, per domain, and overall. In addition we will release the traces of all trails for the competitors benefit to analyze.
+ 
 
 <!--- ### Procedure
 The competition will be comprised of two phases.
