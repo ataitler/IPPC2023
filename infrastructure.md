@@ -72,7 +72,7 @@ There are two options at the moment to obtain the pyRDDLGym infrstructure
 1. Pip installation `pip install pyRDDLGym` \
 In order to avoid any package conflicts we recommand using a virtual environment:
 ```bash
-conda create -n rddl python=3.7
+conda create -n rddl python=3.8
 conda activate rddl
 pip install pyrddlgym
 ```
