@@ -222,10 +222,7 @@ Procedure
         - The maximum avg-norm-score for any competing planner is 1.
         - Agents will be ranked by their avg-norm-score.
 
-In addition we intend to make the following changes to the 2011 evaluation (subject to community discussions)
-1. Per-instance time limits instead of an overall 24 hour time limit.
-2. Competitor can do as many simulations as it wants before it initiates the final evaluation of 30 trials.
-3. We're considering using strong manual baseline policies for max normalization (hence scores will not necessarily be in [0,1]) <!-- to deal with the issues raised in Jendrik's paper. -->
+<!-- to deal with the issues raised in Jendrik's paper. -->
 
 ## Registration
 <!--- At this point just join the google group (see link at the bottom) and announce your interest to compete in a post that includes your tentative team name, organization, and team members. --->
@@ -235,7 +232,6 @@ Registration for the competition is now open. Please register at the following l
 The registration will be closed on March 15, 2023. If you missed the deadline and wish to compete please contact one of the organizers (Ayal Taitler or Scott Sanner).
 
  
-
 
 ## Organizers
 - [Ayal Taitler](https://sites.google.com/view/ataitler/home) (University of Toronto, CA)
