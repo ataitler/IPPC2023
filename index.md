@@ -52,8 +52,7 @@ pyRDDLGym also comes with a set of auxiliary utils and baseline methods:
 
 ## Domains
 
-There are several original domains at the time of the competition call, but more domains will be added, and we strongly encourage the community to create and contribute used defined domains in you field of expertise, or any problem you think the community should try to solve. The highest quality community contributed domains will be selected to be part of the competition's domains. We are aware that participants that submit a domain that is used have some advantage with respect to performance on that domain. We view this as a good incentive for teams to submit high quality proposals.
-
+We provide a sample of RDDL domains here and include a list of the eight Final Competition Domains further below. We still encourange the community to contribute user defined domains, or ideas you think the community should be aware of. While it will not make it into the current competition it will help enrich the the problem database, and be mature enough to be included in future competition.
 
 
 <div class="image123" style="center">
@@ -129,9 +128,106 @@ Note, that there are additional domains out there from past competitions (IPPC 2
 
 Past competitions were entirely discrete; the focus of this year’s competition is on continuous and mixed discrete-continuous problems. However, everybody are welcome to take advantage of their existance. All previous competition domains are avilavble through the [rddlrepository](https://github.com/ataitler/rddlrepository) package/git.
 
-<!--Past compeition were entirely discrete and as the focus of this year is continous and mix discrete-continous problems, their domains were not included in the pyRDDLGym repository. However everybody are welcome to take advantage of their existence. Just make sure they do not make use of something outside of pyRDDLGym RDDL subset. In that case the original [Java simulator](https://github.com/ssanner/rddlsim) can be used. -->
 
+
+## Registration
+
+Registration for the competition is now open. Please register at the following link:
+
+- [Registration form](https://forms.gle/W9ng4v3vciNcc9S27)
+
+The registration will be closed on March 15, 2023. 
+<!-- If you missed the deadline and wish to compete please contact one of the organizers (Ayal Taitler or Scott Sanner). -->
+
+ 
 ## Procedure
+
+### Documentation and Source Code
+
+All competitors must submit a (maximum) 2 page abstract, describing their method. The competitors
+must also submit the source code of their method to be examined (and may be run) by the organizers
+of the competition.
+
+An important requirement for IPC 2023 competitors is to give the organizers the right to post their
+paper and the source code of their learners/planners on the official IPC 2023 web site, and the source
+code of submitted planners must be released under a license allowing free non-commercial use.
+
+
+### Final Competition Domains
+
+The competition will include:
+- 8 domains (two will be release each day)
+- 5 instances per domain
+
+| Domain                | pyRDDLGym name         |
+|:----------------------|:-----------------------|
+| Race Car              |  RaceCar               |
+| Reservoir Control     |  Reservoir continuous  |
+| Recommender Systems   |  RecSim                |
+| HVAC                  |  HVAC                  |
+| UAV                   |  UAV continuous        |
+| Power Generation      |  PowerGen continuous   |
+| Mountain Car          |  MountainCar           |
+| Mars Rover            |  MarsRover             |
+
+
+### Competition Logistics
+
+The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th, at the
+beginning of each day (for four consecutive days) 5 instances of varying size and difficulty with a
+maximum horizon of 100 will be released for 2 selected domains per day. The competitors will have 24
+hours for any autonomous learning or tuning before they submit a maximum 2GB container (per
+domain) before the end of the 24 hour window.
+
+Competitors should self-report training specifications (how many machines and machine
+specifications).
+
+Manual encoding of domain knowledge is prohibited – the 24 hour period is a training phase intended
+for reinforcement learning competitors and competitors who otherwise need to tune planner
+hyperparameters.
+
+Remark: we will use the same five instances at evaluation time in this edition of the competition in
+order to facilitate reinforcement learning competitors who may need to learn per-instance.
+
+Detailed instructions on how to upload the containers will be released closer to the competition date.
+
+### Evaluation and Scoring
+
+After June 8, 2023, competitor container submissions will be evaluated using an 8-core CPU (no GPU)
+with 32Gb of RAM (exact specifications TBD) on 50 randomized trials for each of the 8 competition
+domains and the 5 instances released during the competition.
+
+The average over all 50 trails will be taken as the raw score for each instance.
+
+Normalized [0,1] instance scores will be computed according to the following lower and upper bounds:
+- 0: max(noop policy, random policy).
+- 1: max(JaxPlanner, best competing method).
+
+A planner that does worse than 0 on this normalized scale will receive a 0. Each trial has a 2 minute
+time limit; failure to execute any trial (e.g., crash) for an instance or exceeding the time limit in any trial
+for an instance will lead to overall normalized score of 0 for that instance. No competitor can exceed a
+score of 1, by definition.
+
+Normalized domain scores will be computed as an average of normalized instance scores.
+
+An overall competition score will be computed as an average of normalized domain scores.
+
+
+### Results Announcement
+
+By the competition registration deadline, we will release code for computing all scores above from
+competition traces for each competitor.
+
+At the ICAPS conference (July 8-13), we will announce winners per domain (by domain score) and an
+overall winner (by competition score). At this time, we will also publicly release traces of all trails for
+the competitors to allow reproduction and verification of score computations and to facilitate trace
+analysis of competitors.
+
+
+
+
+
+<!-- ## Procedure
 
 All competitors must submit an up to 2 pages abstract, describing their method. The competitors must also submit the source code of their method to be examined (and may be run) by the organizers of the competition. An important requirement for IPC 2023 competitors is to give the organizers the right to post their paper and the source code of their learners/planners on the official IPC 2023 web site, and the source code of submitted planners must be released under a license allowing free non-commercial use.
 
@@ -222,16 +318,16 @@ Procedure
         - The maximum avg-norm-score for any competing planner is 1.
         - Agents will be ranked by their avg-norm-score.
 
-<!-- to deal with the issues raised in Jendrik's paper. -->
+<!-- to deal with the issues raised in Jendrik's paper. 
 
 ## Registration
-<!--- At this point just join the google group (see link at the bottom) and announce your interest to compete in a post that includes your tentative team name, organization, and team members. --->
+<!--- At this point just join the google group (see link at the bottom) and announce your interest to compete in a post that includes your tentative team name, organization, and team members. 
 Registration for the competition is now open. Please register at the following link:
 [Registration form](https://forms.gle/W9ng4v3vciNcc9S27)
 
 The registration will be closed on March 15, 2023. If you missed the deadline and wish to compete please contact one of the organizers (Ayal Taitler or Scott Sanner).
 
- 
+ -->
 
 ## Organizers
 - [Ayal Taitler](https://sites.google.com/view/ataitler/home) (University of Toronto, CA)
