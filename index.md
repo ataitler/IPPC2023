@@ -161,7 +161,7 @@ The methods will be evaluated on the 8 competition domains and the 5 instances r
 
 All results will be normalized according to
 - 0: max(noop, random).
-- 1: Jaxplanner or best competing method to ensure values [0,1].
+- 1: JaxPlanner or best competing method to ensure values [0,1].
 
 Normalization will be done per instance.
 
