@@ -156,8 +156,8 @@ code of submitted planners must be released under a license allowing free non-co
 ### Final Competition Domains
 
 The competition will include:
-- 8 domains (two will be release each day)
-- 5 instances per domain
+- 8 domains (available now)
+- 5 instances per domain (released at competition time)
 
 | Domain                | pyRDDLGym name         |
 |:----------------------|:-----------------------|
