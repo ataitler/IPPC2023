@@ -150,11 +150,13 @@ The registration will be closed on March 15, 2023.
 
 All competitors must submit a (maximum) 2 page abstract, describing their method. The competitors
 must also submit the source code of their method to be examined (and may be run) by the organizers
-of the competition.
+of the competition. Please format submissions in AAAI style (see instructions in the [Author Kit](https://www.aaai.org/Publications/Templates/AuthorKit23.zip)), please use the camera ready version with the names and affiliations.
 
 An important requirement for IPC 2023 competitors is to give the organizers the right to post their
 paper and the source code of their learners/planners on the official IPC 2023 web site, and the source
 code of submitted planners must be released under a license allowing free non-commercial use.
+
+[Abstract submission](https://docs.google.com/forms/d/e/1FAIpQLScYZ1KDkk1a7A2thtNUEuf8YMcAn_xNyRCPP3MtHfX71FDwkQ/viewform?usp=sf_link) due May 1, 2023.
 
 
 ### Final Competition Domains
