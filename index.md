@@ -148,7 +148,7 @@ The registration will be closed on March 15, 2023.
 
 ### Documentation and Source Code
 
-All competitors must submit a (maximum) 2 page abstract, describing their method. The competitors
+All competitors must submit a (maximum) 2 page abstract + unlimited references, describing their method. The competitors
 must also submit the source code of their method to be examined (and may be run) by the organizers
 of the competition. Please format submissions in AAAI style (see instructions in the [Author Kit](https://www.aaai.org/Publications/Templates/AuthorKit23.zip)), please use the camera ready version with the names and affiliations.
 
