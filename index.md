@@ -132,7 +132,11 @@ Past competitions were entirely discrete; the focus of this year’s competition
 
 ## Registration
 
-Registration for the competition is now open. Please register at the following link:
+Registration for the competition is now closed.
+
+A record number of groups have registered, we are expecting an amazing competition.
+
+<!---Please register at the following link:
 
 - [Registration form](https://forms.gle/W9ng4v3vciNcc9S27)
 
