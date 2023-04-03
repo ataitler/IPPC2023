@@ -191,7 +191,7 @@ This stage will test both the competition infrastructure and procedure and the c
 
 The dry run will take place on April 17th, during which a 24 hour window will be open for submission of the competing method. Each method will be executed on a single domain, randomly chosen from the list of competition domains.
 
-The submission must include the ID of the competing team, unique permanent name of the competing method, and links to the github repository and dockerhub of the method image. For technical instructions and further explanation please see
+The submission must include the ID of the competing team, unique permanent name of the competing method, and links to the github repository (optional) and dockerhub of the method image (mendatory). For technical instructions and further explanation please see
 
 - [How to Dockerize your method](/Dockerization.md)
 
