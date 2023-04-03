@@ -184,6 +184,23 @@ The competition will include:
 | Mars Rover            |  MarsRover             |
 
 
+### Competition Dry-run
+
+A mandatory stage for all competitors is to participate in a dry run of the competition.
+This stage will test both the competition infrastructure and procedure and the competitors side to prevent problems and misunderstandings at competition time.
+
+The dry run will take place on April 17th, during which a 24 hour window will be open for submission of the competing method. Each method will be executed on a single domain, randomly chosen from the list of competition domains.
+
+The submission must include the ID of the competing team, unique permanent name of the competing method, and links to the github repository and dockerhub of the method image. For technical instructions and further explanation please see
+
+- [How to Dockerize your method](/Dockerization.md)
+
+Note that the competition infrastructure will use the singularity infrastructure, and thus all dockers must use the template and follow the instruction on the link above to assure compatibility between the docker image and the competition infrastructure on our HPC.
+
+The dockers submitted to the dry-run stage must not be a noop agent. The docker image and trace logs will be inspected to ensure that.
+
+[Dry-run submission](), due to April 17, 2023 (form TBD)
+
 ### Competition Logistics
 
 The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th, at the
