@@ -146,18 +146,25 @@ The registration will be closed on March 15, 2023.
  
 ## Procedure
 
-### Documentation and Source Code
+### Abstract Submission and Source Code
 
-All competitors must submit a (maximum) 2 page abstract + unlimited references, describing their method. The competitors
-must also submit the source code of their method to be examined (and may be run) by the organizers
-of the competition. Please format submissions in AAAI style (see instructions in the [Author Kit](https://www.aaai.org/Publications/Templates/AuthorKit23.zip)), please use the camera ready version with the names and affiliations.
+All competitors must submit a (maximum) 2 page abstract + unlimited references, describing their method.
+We encourage the authors to release a public github link to their planner in their abstract.  If this github link is not provided in the abstract, it will be required by the final competition submission since the results of the competition winners will need to be independently verified by the competition organizers.
+Please format submissions in AAAI style (see instructions in the [Author Kit](https://www.aaai.org/Publications/Templates/AuthorKit23.zip)), please use the camera ready version with the names and affiliations.
+
+All abstracts must comply with the following requirements:
+1. Provide a clear explanation of your method with appropriate citation. If external/off-the-shelf tools were used, provide a clear explanation of how and of any modification done for the purpose of the competition.
+2. Provide a description of any manual prior knowledge intended to be used for the automatic tuning of your method (domain specific heuristics, etc.).
+3. Provide a list of external libraries used (beyond standard python libraries, in particular any RL/planning libraries used in the solution.
+4. Provide a clear explanation of the intended method to automatically and systematically tune your method before the competition starts (June 5th), and during the four days of the competition.
+
+
+[Abstract submission](https://docs.google.com/forms/d/e/1FAIpQLScYZ1KDkk1a7A2thtNUEuf8YMcAn_xNyRCPP3MtHfX71FDwkQ/viewform?usp=sf_link) due May 1, 2023.
+
 
 An important requirement for IPC 2023 competitors is to give the organizers the right to post their
 paper and the source code of their learners/planners on the official IPC 2023 web site, and the source
 code of submitted planners must be released under a license allowing free non-commercial use.
-
-[Abstract submission](https://docs.google.com/forms/d/e/1FAIpQLScYZ1KDkk1a7A2thtNUEuf8YMcAn_xNyRCPP3MtHfX71FDwkQ/viewform?usp=sf_link) due May 1, 2023.
-
 
 ### Final Competition Domains
 
