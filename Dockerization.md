@@ -3,9 +3,9 @@
 ## Requirements
 All the dockers for the competition are encouranged to use the following:
 1. OS: Linux. Alpine specifically as the base for the official python:3.10 docker image.
-2. Docker version: ...
+2. Docker version: 23.0.0
 
-The infrastructure was tested with the Linux Alpine as part of the base layer official python:3.10, and dockers built on version ... of the docker engine.
+The infrastructure was tested with the Linux Alpine as part of the base layer official python:3.10, and dockers built on version 23.0.0 of the docker engine.
 Using other Linux based OS and other docker engine version might be possible but has not been tested, use them on your own risk.
 
 ## Docker Template
