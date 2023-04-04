@@ -197,7 +197,7 @@ The submission must include the ID of the competing team, unique permanent name 
 
 Note that the competition infrastructure will use the singularity infrastructure, and thus all dockers must use the template and follow the instruction on the link above to assure compatibility between the docker image and the competition infrastructure on our HPC.
 
-The dockers submitted to the dry-run stage must not be a noop agent. The docker image and trace logs will be inspected to ensure that.
+We expect that your planner is capable of generating non-noop (potentially random) legal actions. The docker image and trace logs will be inspected to ensure that.
 
 [Dry-run submission](https://docs.google.com/forms/d/e/1FAIpQLSdO7hi58arEZnvGw14pR6v46fObRoeorvyg1Uhjj3BNMWBmwg/viewform?usp=sf_link), due to April 17, 2023.
 
