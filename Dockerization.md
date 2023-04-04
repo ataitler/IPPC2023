@@ -11,8 +11,7 @@ Using other Linux based OS and other docker engine version might be possible but
 ## Docker Template
 
 A template github for the noop agent is provided as a starting point:
-- [https://github.com/ataitler/RDDL-demo-agent](https://github.com/ataitler/RDDL-demo-agent)
-The github also provides details on how to run and create your docker. The packaged image of the repository above is available through docker-hub at:
+- [https://github.com/ataitler/RDDL-demo-agent](https://github.com/ataitler/RDDL-demo-agent). The github also provides details on how to run and create your docker. The packaged image of the repository above is available through docker-hub at:
 - [docker://ataitler/rddl-demo-agent](docker://ataitler/rddl-demo-agent)
 
 For those of you who are new to docker, we recommand a quick crash course:
