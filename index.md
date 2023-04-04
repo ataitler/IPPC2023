@@ -29,6 +29,7 @@ We invite interested competitors to join the competition discussion:
 | Call for domains and praticipants             | October, 2022    |
 | Final domains announcement                    | March 2, 2023    |
 | Competitors registration deadline             | March 15, 2023   |
+| Dry-run                                       | April 17, 2023   |
 | Planner abstract dubmission                   | May 1, 2023      |
 | Contest run                                   | June 5-8, 2023   |
 | Results announced                             | July 12, 2023    |
