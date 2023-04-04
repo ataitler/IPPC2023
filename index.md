@@ -189,7 +189,7 @@ The competition will include:
 A mandatory stage for all competitors is to participate in a dry run of the competition.
 This stage will test both the competition infrastructure and procedure and the competitors side to prevent problems and misunderstandings at competition time.
 
-The dry run will take place on April 17th, during which a 24 hour window will be open for submission of the competing method. Each method will be executed on a single domain, randomly chosen from the list of competition domains.
+The dry run will take place on April 17th, during which a 24 hour window will be open for submission of the competing method. Each method will be executed on two domains, and two instances each. The domains for the dry-run will be HVAC and RaceCar.
 
 The submission must include the ID of the competing team, unique permanent name of the competing method, and links to the github repository (optional) and dockerhub of the method image (mendatory). For technical instructions and further explanation please see
 
