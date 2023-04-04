@@ -159,7 +159,7 @@ All abstracts must comply with the following requirements:
 4. Provide a clear explanation of the intended method to automatically and systematically tune your method before the competition starts (June 5th), and during the four days of the competition.
 
 
-[Abstract submission](https://docs.google.com/forms/d/e/1FAIpQLScYZ1KDkk1a7A2thtNUEuf8YMcAn_xNyRCPP3MtHfX71FDwkQ/viewform?usp=sf_link) due May 1, 2023.
+[Abstract submission](https://docs.google.com/forms/d/e/1FAIpQLScYZ1KDkk1a7A2thtNUEuf8YMcAn_xNyRCPP3MtHfX71FDwkQ/viewform?usp=sf_link), due May 1, 2023.
 
 
 An important requirement for IPC 2023 competitors is to give the organizers the right to post their
@@ -199,7 +199,7 @@ Note that the competition infrastructure will use the singularity infrastructure
 
 The dockers submitted to the dry-run stage must not be a noop agent. The docker image and trace logs will be inspected to ensure that.
 
-[Dry-run submission](), due to April 17, 2023 (form TBD)
+[Dry-run submission](https://docs.google.com/forms/d/e/1FAIpQLSdO7hi58arEZnvGw14pR6v46fObRoeorvyg1Uhjj3BNMWBmwg/viewform?usp=sf_link), due to April 17, 2023.
 
 ### Competition Logistics
 
