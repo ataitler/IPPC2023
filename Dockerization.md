@@ -18,6 +18,8 @@ For those of you who are new to docker, we recommand a quick crash course:
 - [Dockers for begginers](https://docker-curriculum.com/)
 
 
+**Important**: It is _**mandatory**_ to clone/fork this template, and populate it with your own method as your docker must contain as entrypoint the main.py file from that repo. The interaction loop, timers, and pyRDDLGym interaction for the competition are included in that file and not externally. This is to allow for simple "local" like interaction, and transperancy of the competition procedure. As described in the template repo, your method will interact with a competition version of pyRDDLGym installed by us on our server and mapped to your container. Using the template will ensure correct interaction with the pyRDDLGym server.
+
 ### Example run
 
 The dockers will rebuilt and executed on our HPC using the Singularity infrastructure. Thus, complying with the instructuins is crucial for the transition to work smoothly (full paths, etc.).
