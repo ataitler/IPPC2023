@@ -184,6 +184,11 @@ The competition will include:
 | Mountain Car          |  MountainCar           |
 | Mars Rover            |  MarsRover             |
 
+Instance generators are available for all of these domains. The competition instances will be generated with these generators.
+Documentation of the generators is available here:
+
+- [Instance generators](/instancegen.md)
+
 
 ### Competition Dry-run
 
