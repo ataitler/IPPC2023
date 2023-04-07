@@ -204,11 +204,16 @@ We expect that your planner is capable of generating non-noop (potentially rando
 
 ### Competition Logistics
 
-The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th, at the
+The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th, 
+3 instances will be release for all 8 domains. Competitors will have the full 4 days to tune their 
+methods for the 3 instances. At the end of the four days a docker image of maximum 2GB, with the 
+tuned method will be submitted.
+
+<!---at the
 beginning of each day (for four consecutive days) 5 instances of varying size and difficulty with a
 maximum horizon of 100 will be released for 2 selected domains per day. The competitors will have 24
 hours for any autonomous learning or tuning before they submit a maximum 2GB container (per
-domain) before the end of the 24 hour window.
+domain) before the end of the 24 hour window.-->
 
 Competitors should self-report training specifications (how many machines and machine
 specifications).
@@ -220,13 +225,14 @@ hyperparameters.
 Remark: we will use the same five instances at evaluation time in this edition of the competition in
 order to facilitate reinforcement learning competitors who may need to learn per-instance.
 
-Detailed instructions on how to upload the containers will be released closer to the competition date.
+<!--Detailed instructions on how to upload the containers will be released closer to the competition date.-->
 
 ### Evaluation and Scoring
 
 After June 8, 2023, competitor container submissions will be evaluated using an 8-core CPU (no GPU)
-with 32Gb of RAM (exact specifications TBD) on 50 randomized trials for each of the 8 competition
-domains and the 5 instances released during the competition.
+with 32Gb of RAM, on 50 randomized trials for each instance of the 8 competition domains.
+The evaluation instances for each domain will include the 3 pre-released instances,
+with additional 5 new never seen before instances - total of 5 instances per domain.
 
 The average over all 50 trails will be taken as the raw score for each instance.
 
