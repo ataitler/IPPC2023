@@ -134,7 +134,7 @@ params = {
 A problem with a single reservoir to be controlled:
 
 ```python
-params ={
+params = {
           'num_reservoirs': 1,
           'max_edges': 1,
           'top_range': (100., 200.),
