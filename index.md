@@ -176,11 +176,11 @@ The competition will include:
 | Domain                | pyRDDLGym name         |
 |:----------------------|:-----------------------|
 | Race Car              |  RaceCar               |
-| Reservoir Control     |  Reservoir continuous  |
+| Reservoir Control     |  Reservoir_continuous  |
 | Recommender Systems   |  RecSim                |
 | HVAC                  |  HVAC                  |
-| UAV                   |  UAV continuous        |
-| Power Generation      |  PowerGen continuous   |
+| UAV                   |  UAV_continuous        |
+| Power Generation      |  PowerGen_continuous   |
 | Mountain Car          |  MountainCar           |
 | Mars Rover            |  MarsRover             |
 
