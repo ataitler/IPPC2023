@@ -169,7 +169,7 @@ paper and the source code of their learners/planners on the official IPC 2023 we
 code of submitted planners must be released under a license allowing free non-commercial use.
 
 <!--
-[Final abstract submission](https://forms.gle/GWmCJq1rXEAHqFJp7), due June 13, 2023.
+[Revised abstract submission](https://forms.gle/GWmCJq1rXEAHqFJp7), due June 13, 2023.
 
 As a conclusion for the iniail submission, we emphesize that all Abstracts must comply with the instructions above. Think of the abstract as a short 2pages+references paper presenting your method.
 For your convenience we have created an example for an abstract, you can use it as template if you wish - [Latex](Abstracts/IPPC_Abstract_Example.zip) | [Word](Abstracts/IPPC_Abstract_Example.docx).
@@ -213,32 +213,49 @@ Note that the competition infrastructure will use the singularity infrastructure
 
 We expect that your planner is capable of generating non-noop (potentially random) legal actions. The docker image and trace logs will be inspected to ensure that.
 
-[Dry-run submission](https://docs.google.com/forms/d/e/1FAIpQLSdO7hi58arEZnvGw14pR6v46fObRoeorvyg1Uhjj3BNMWBmwg/viewform?usp=sf_link), due to April 17, 2023.
+[Dry-run submission](https://docs.google.com/forms/d/e/1FAIpQLSdO7hi58arEZnvGw14pR6v46fObRoeorvyg1Uhjj3BNMWBmwg/viewform?usp=sf_link), due April 17, 2023.
 
-### Competition Logistics
 
-The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th, 
-3 instances will be release for all 8 domains. Competitors will have the full 4 days to tune their 
+### Competition Run and Logistics
+
+The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th 8:00 AM EST,
+3 instances will be release for all 8 domains. Competitors will have the 4 days to tune their 
 methods for the 3 instances. At the end of the four days a docker image of maximum 2GB, with the 
-tuned method will be submitted.
+tuned method will be submitted. All submissions must be finalized by June 8th 8:00 PM EST.
+Please make sure your submission is based on the template in the [demo NoOp docker example](https://github.com/ataitler/RDDL-demo-agent).
 
-<!---at the
-beginning of each day (for four consecutive days) 5 instances of varying size and difficulty with a
-maximum horizon of 100 will be released for 2 selected domains per day. The competitors will have 24
-hours for any autonomous learning or tuning before they submit a maximum 2GB container (per
-domain) before the end of the 24 hour window.-->
+[Competition submission](https://forms.gle/CpaR6YSaA571ytuA8), due June 8th, 8 PM EST 2023.
+
+The competition version of pyRDDLGym, containing the competition instances is available at the pyRDDLGym git repository under the branch IPPC2023:
+
+[Competition pyRDDLGym](https://github.com/ataitler/pyRDDLGym/tree/IPPC2023)
+
+For the 4 days of the competition you will have access to 3 of the 5 evaluation instances through the IPPC2023 branch.
+The instances will be indexed 1,3,5 while 2,4 are hidden and will be published only after the submission deadline has passed.
+The instances are generally designed to be in increasing order of difficulty, with 1 being the easiest and 5 the hardest.
+The competition instances have unique names: 'instance#c.rddl' (# stands for 1,3,5) at the pyRDDLGym examples tree.
+The instances are accesible through the ExampleManager object as all other pyRDDLGym examples.
+The following is an example how to access instance 1 of the competition of the 'HVAC' domain:
+
+```python
+from pyRDDLGym import RDDLEnv
+EnvInfo = ExampleManager.GetEnvInfo('HVAC')
+myEnv = RDDLEnv.RDDLEnv(domain=EnvInfo.get_domain(), instance=EnvInfo.get_instance('1c'))
+```
 
 Competitors should self-report training specifications (how many machines and machine
 specifications).
 
-Manual encoding of domain knowledge is prohibited – the 24 hour period is a training phase intended
-for reinforcement learning competitors and competitors who otherwise need to tune planner
-hyperparameters.
+Manual encoding of explicity domain and instance knowledge is prohibited, 
+you are however allowed to use domain specific heuristics and other automatic domain specific methods, as long as you report them.
 
 Remark: we will use the same five instances at evaluation time in this edition of the competition in
 order to facilitate reinforcement learning competitors who may need to learn per-instance.
 
-<!--Detailed instructions on how to upload the containers will be released closer to the competition date.-->
+An updated abstract containining any domain knowledge decleration, and the training specification must be submitted by June 13th, 2023
+
+[Revised abstract submission](https://forms.gle/GWmCJq1rXEAHqFJp7), due June 13, 2023.
+
 
 ### Evaluation and Scoring
 
@@ -253,10 +270,10 @@ Normalized [0,1] instance scores will be computed according to the following low
 - 0: max(noop policy, random policy).
 - 1: max(JaxPlanner, best competing method).
 
-A planner that does worse than 0 on this normalized scale will receive a 0. Each trial has a 2 minute
-time limit; failure to execute any trial (e.g., crash) for an instance or exceeding the time limit in any trial
+A planner that does worse than 0 on this normalized scale will receive a 0. Each instance will have an hour (60 minutes) for general initilization, and then each trial will have 4 minutes
+time limit; total of 60 + 50*4 = 260 minutes will be allocated per instance, with independent timers for each stage (you cannot use 200 minutes for initilaization and then do all the 50 episdoes in 60 minutes). failure to execute any trial (e.g., crash) for an instance or exceeding the time limit in any trial
 for an instance will lead to overall normalized score of 0 for that instance. No competitor can exceed a
-score of 1, by definition.
+score of 1, by definition. Note that scoring less then 0 will result in rounding to zero (adversarial acting).
 
 Normalized domain scores will be computed as an average of normalized instance scores.
 
@@ -273,111 +290,6 @@ overall winner (by competition score). At this time, we will also publicly relea
 the competitors to allow reproduction and verification of score computations and to facilitate trace
 analysis of competitors.
 
-
-
-
-
-<!-- ## Procedure
-
-All competitors must submit an up to 2 pages abstract, describing their method. The competitors must also submit the source code of their method to be examined (and may be run) by the organizers of the competition. An important requirement for IPC 2023 competitors is to give the organizers the right to post their paper and the source code of their learners/planners on the official IPC 2023 web site, and the source code of submitted planners must be released under a license allowing free non-commercial use.
-
-The competition will take place Mon-Thu June 5 - June 8 2023. The competition will be comprised of two phases.
-- __Training phase__: During the two months before the competition, the competitors will train and get ready to compete. The RDDL sources for the domains and at least one instance per domains will be available during the whole period. In addition, instance generators will also be released after the registration deadline.
-- __Evaluation phase__: during the week starting at June 5th, at the beginning of each day 5 instances will be release for 2 domains per day. The competitors will have 24 hours to fine-tune their method and submit a container (per domain) before the end of the 24 hours window.
-
-### Domains
-The competition will include:
-- 8 domains (two will be release each day)
-- 5 instances per domain
-
-| Domain                | pyRDDLGym name         |
-|:----------------------|:-----------------------|
-| Race Car              |  RaceCar               |
-| Reservoir Control     |  Reservoir continuous  |
-| Recommender Systems   |  RecSim                |
-| HVAC                  |  HVAC                  |
-| UAV                   |  UAV continuous        |
-| Power Generation      |  PowerGen continuous   |
-| Mountain Car          |  MountainCar           |
-| Mars Rover            |  MarsRover             |
-
-
-### Evaluation and Score
-The methods will be evaluated on the 8 competition domains and the 5 instances released during the evaluation phase. Containers are expected to be submitted within 24 hours of instance release, on their own hardware with self-reported specs, containers for each domain should not exceed 2GB. All methods will be evaluated on an 8 CPU computer with 32 GB of memory. Each instance will be evaluated for 50 trails, and each trail will be given a maximum of 2 minutes, the average over all 50 trails will be taken as the score for that instance. Typical horizon will be around 100 steps.
-
-All results will be normalized according to
-- 0: max(noop, random).
-- 1: JaxPlanner or best competing method to ensure values [0,1].
-
-Normalization will be done per instance.
-
-Detailed instruction on how to upload the containers will be release closer to the date of the evaluation phase.
-
-### Results
-
-We will report the results per instance, per domain, and overall. In addition we will release the traces of all trails for the competitors benefit to analyze.
- 
-
-<!--- ### Procedure
-The competition will be comprised of two phases.
-- Training phase: a week before the competition day, 3 evaluation instances of each domain will be released. For competitors to train/evaluate their methods on.
-- Evaluation phase: at the end of the week, each competitor will have a designated time and IP for a cloud resource. The competitors will connect, set up their solutions (the time for that will be taken into consideration), and execute their solutions 10 times for each instance. The average reward over these 10 runs will be the score for the instance. During evaluation, an additional 2 never seen before instances will be evaluated (in addition to the 3 already-released instances). I.e., 5 instances for each domain, 10 runs per instance.
-
-
-### Score
-For each instance, the total reward will be normalized to the range [0,1], and the winner is the competitor who achieves the highest total score.
-(The minimum score for the competition will be 0 and the maximum will be 40)
-The fine details are subject to discussion in the google-group and will be finalized by the end of January.
---->
-<!-- but the general lines will follow the evaluation of the past [IPPC 2011](http://users.cecs.anu.edu.au/~ssanner/IPPC_2011/index.html) competition. 
-
-Domains (note numbers might change this year)
-- 8 domains
-- 10 instances per domain
-- 30 trials per instance
-
-Procedure
-- We will use a cloud computing resources, where every team will gain access to an identical computer. The exact configuration will be published enough time before the competition, and an early access will be possible in order to test the code and know what to expect.
-- At competition time
-    - You will receive instructions on how to login to your own personal Linux node.
-    - The location of all RDDL domains / instances.
-    - Your agent will have 24 hours to complete trials for all instances.
-        - Instances will have a suffix "_1" up to "_10" where 1 will be the smallest (usually easiest) and 10 the largest (usually hardest).
-        - You need not compete on all instances or for all trials, in that case the best average score from the random and NOOP policies is assigned (see below).
-- Post-competition evaluation
-    - We will shutdown the server at the 24 hour time limit.
-    - The server maintains a log file for all instances and trials you complete.
-    - If you execute more than 30 trials per instance, we will only use data for the last 30 trials.
-    - Overall planner evaluation criterion for ranking.
-        - For each instance trial, the server records a raw score.
-            - For the final competition (boolean MDP and POMDP tracks), a fixed horizon of 40 will be used for all instances.
-    - We will compute a [0,1] normalized average score per instance from raw score.
-        - Per instance, averaged over all 30 trials, we will determine.
-            - The minimum average score (minS_{instance}) is the max over the average scores from a purely random policy and an always-noop policy.
-            - The maximum average score (maxS_{instance}) is the max over all competitors, a purely random policy, and a pure noop policy.
-            - If a planner does not compete a trial for an instance, minS_{instance} is assigned as the raw score for that missing trial.
-            - We will make available all raw and normalized data as well as minS_{instance} and maxS_{instance} used to compute the normalized score for each instance.
-        - Normalized-score_{planner,instance} = max(0, [(sum_{trials 1..30} raw-score_{planner,instance,trial})/30 - minS_{instance}] / [(maxS_{instance} - minS_{instance})] ).
-        - We use a max here in the unlikely event that a planner does worse than either the noop or random policies to ensure the minimum score is 0... we don't want to penalize a planner that tries and fails vs. a planner that simply skips an instance and gets 0 automatically.
-    - Final agent evaluation criterion
-        - avg-norm-score_{planner} = (sum_{instance 1..80} normalized-score_{planner,instance}) / 80.
-        - Note 1: 80 instances are from 8 domains X 10 instances per domain (instance names uniquely determine the domain).
-        - Note 2: given the normalized score per instance, it is to your advantage to complete easier instances before harder ones.
-    - Min / max score:
-        - The minimum avg-norm-score for any competing planner is 0.
-        - The maximum avg-norm-score for any competing planner is 1.
-        - Agents will be ranked by their avg-norm-score.
-
-<!-- to deal with the issues raised in Jendrik's paper. 
-
-## Registration
-<!--- At this point just join the google group (see link at the bottom) and announce your interest to compete in a post that includes your tentative team name, organization, and team members. 
-Registration for the competition is now open. Please register at the following link:
-[Registration form](https://forms.gle/W9ng4v3vciNcc9S27)
-
-The registration will be closed on March 15, 2023. If you missed the deadline and wish to compete please contact one of the organizers (Ayal Taitler or Scott Sanner).
-
- -->
 
 ## Organizers
 - [Ayal Taitler](https://sites.google.com/view/ataitler/home) (University of Toronto, CA)
