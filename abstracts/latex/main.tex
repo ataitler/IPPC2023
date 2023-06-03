@@ -1,0 +1,142 @@
+%File: formatting-instructions-latex-2023.tex
+%release 2023.0
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage{aaai23}  % DO NOT CHANGE THIS
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet}  % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
+%
+% These are recommended to typeset algorithms but not required. See the subsubsection on algorithms. Remove them if you don't have algorithms in your paper.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%
+% These are are recommended to typeset listings but not required. See the subsubsection on listing. Remove this block if you don't have listings in your paper.
+\usepackage{newfloat}
+\usepackage{listings}
+\DeclareCaptionStyle{ruled}{labelfont=normalfont,labelsep=colon,strut=off} % DO NOT CHANGE THIS
+\lstset{%
+	basicstyle={\footnotesize\ttfamily},% footnotesize acceptable for monospace
+	numbers=left,numberstyle=\footnotesize,xleftmargin=2em,% show line numbers, remove this entire line if you don't want the numbers.
+	aboveskip=0pt,belowskip=0pt,%
+	showstringspaces=false,tabsize=2,breaklines=true}
+\floatstyle{ruled}
+\newfloat{listing}{tb}{lst}{}
+\floatname{listing}{Listing}
+%
+% Keep the \pdfinfo as shown here. There's no need
+% for you to add the /Title and /Author tags.
+\pdfinfo{
+/TemplateVersion (2023.1)
+}
+
+% DISALLOWED PACKAGES
+% \usepackage{authblk} -- This package is specifically forbidden
+% \usepackage{balance} -- This package is specifically forbidden
+% \usepackage{color (if used in text)
+% \usepackage{CJK} -- This package is specifically forbidden
+% \usepackage{float} -- This package is specifically forbidden
+% \usepackage{flushend} -- This package is specifically forbidden
+% \usepackage{fontenc} -- This package is specifically forbidden
+% \usepackage{fullpage} -- This package is specifically forbidden
+% \usepackage{geometry} -- This package is specifically forbidden
+% \usepackage{grffile} -- This package is specifically forbidden
+% \usepackage{hyperref} -- This package is specifically forbidden
+% \usepackage{navigator} -- This package is specifically forbidden
+% (or any other package that embeds links such as navigator or hyperref)
+% \indentfirst} -- This package is specifically forbidden
+% \layout} -- This package is specifically forbidden
+% \multicol} -- This package is specifically forbidden
+% \nameref} -- This package is specifically forbidden
+% \usepackage{savetrees} -- This package is specifically forbidden
+% \usepackage{setspace} -- This package is specifically forbidden
+% \usepackage{stfloats} -- This package is specifically forbidden
+% \usepackage{tabu} -- This package is specifically forbidden
+% \usepackage{titlesec} -- This package is specifically forbidden
+% \usepackage{tocbibind} -- This package is specifically forbidden
+% \usepackage{ulem} -- This package is specifically forbidden
+% \usepackage{wrapfig} -- This package is specifically forbidden
+% DISALLOWED COMMANDS
+% \nocopyright -- Your paper will not be published if you use this command
+% \addtolength -- This command may not be used
+% \balance -- This command may not be used
+% \baselinestretch -- Your paper will not be published if you use this command
+% \clearpage -- No page breaks of any kind may be used for the final version of your paper
+% \columnsep -- This command may not be used
+% \newpage -- No page breaks of any kind may be used for the final version of your paper
+% \pagebreak -- No page breaks of any kind may be used for the final version of your paperr
+% \pagestyle -- This command may not be used
+% \tiny -- This is not an acceptable font size.
+% \vspace{- -- No negative value may be used in proximity of a caption, figure, table, section, subsection, subsubsection, or reference
+% \vskip{- -- No negative value may be used to alter spacing above or below a caption, figure, table, section, subsection, subsubsection, or reference
+
+\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
+
+% The file aaai23.sty is the style file for AAAI Press
+% proceedings, working notes, and technical reports.
+%
+
+% Title
+
+% Your title must be in mixed case, not sentence case.
+% That means all verbs (including short verbs like be, is, using,and go),
+% nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
+% articles, conjunctions, and prepositions are lower case unless they
+% directly follow a colon or long dash
+
+
+%Example, Multiple Authors, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\title{The 2023 International Planning Competition: RL and Stochastic Planning Track Method Abstract Title}
+\author {
+    % Authors
+    Ayal Taitler,\textsuperscript{\rm 1}
+    Scott Sanner, \textsuperscript{\rm 1}
+    Mike Gimelfarb \textsuperscript{\rm 1}
+}
+\affiliations {
+    % Affiliations
+    \textsuperscript{\rm 1} University of Toronto \\
+    ayal.taitler@utoronto.ca, ssanner@mie.utoronto.ca, mike.gimelfarb@mail.utoronto.ca 
+}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Write here a short summary of your method and your key ideas. This part should not exceed 200 works. Please make sure the whole text (without the references) will not exceed two pages. Please write every detail of your method as it will be used later to evaluate and present you method at the final competition presentation at ICAPS 2023.
+\end{abstract}
+
+\section{Introduction}
+Introduce the context and the background of your approach. E.g., if you are using RL say a few words on RL and the specific algorithms you are using (PPO, DQN, etc.). This is the place to introduce the terminology and reference to the appropriate papers for further reading. Assume the reader does not know what you are using and needs an explicit introduction and references. Here you list everything you need in order to be able to explain your method in the next section. The next paragraph is an example for an introduction for a method that uses DQN.
+
+Control problems are prevalent in various domains, ranging from robotics and autonomous systems to game playing and optimization. The ability to find optimal control policies that maximize long-term rewards in dynamic environments is a fundamental challenge in these domains. In recent years, reinforcement learning (RL) has emerged as a powerful paradigm for addressing such control problems. Among the myriad of RL algorithms, the Deep Q-Network (DQN) \cite{mnih2013playing} algorithm has gained significant attention due to its ability to learn effective control policies directly from raw sensory inputs. In this paper, we present a method for control problems using the DQN algorithm. We delve into the underlying principles of the algorithm, discuss its strengths and limitations, and demonstrate its relevance to the problem presented in the 2023 IPPC. By exploring the capabilities and performance of DQN in different scenarios, this study aims to contribute to the understanding and advancement of RL-based control methods, specifically for the goals set by the 2023 IPPC -- continuous problems, indegenous and exogenous noises on states and actions, etc.
+
+\section{method}
+This is the place to introduce and explain your method. If there is a non standard usage of the simulation infrastructure \cite{taitler2022pyrddlgym} please deatil it here.
+Please be specific and explain in detail every aspect of you proposed method. This includes training procedures, heuristics, normalizations, and any "trick" you have used to make you method work. Don't be afraid to use figures if it will help to illustrate your approach.
+
+\subsection{External Libraries}
+List the modules and external tools you used, that are not original to your solution. This includes non standard python packages.
+
+
+\section{Conclusion}
+If you have some concluding remarks, some take home messages this is the place to briefly bring it to the attention of the reader.
+
+
+
+\bibliographystyle{aaai23}
+\bibliography{aaai23}
+
+\end{document}
