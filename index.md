@@ -168,12 +168,12 @@ An important requirement for IPC 2023 competitors is to give the organizers the 
 paper and the source code of their learners/planners on the official IPC 2023 web site, and the source
 code of submitted planners must be released under a license allowing free non-commercial use.
 
-<!--
+
 [Revised abstract submission](https://forms.gle/GWmCJq1rXEAHqFJp7), due June 13, 2023.
 
-As a conclusion for the iniail submission, we emphesize that all Abstracts must comply with the instructions above. Think of the abstract as a short 2pages+references paper presenting your method.
+As a conclusion from the initial submission, we emphesize that all abstracts must comply with the instructions above. Think of the abstract as a short _2 pages + references_ paper presenting your method.
 For your convenience we have created an example for an abstract, you can use it as template if you wish - [Latex](Abstracts/IPPC_Abstract_Example.zip) | [Word](Abstracts/IPPC_Abstract_Example.docx).
--->
+
 
 ### Final Competition Domains
 
