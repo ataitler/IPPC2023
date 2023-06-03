@@ -243,6 +243,9 @@ EnvInfo = ExampleManager.GetEnvInfo('HVAC')
 myEnv = RDDLEnv.RDDLEnv(domain=EnvInfo.get_domain(), instance=EnvInfo.get_instance('1c'))
 ```
 
+For your convinience, we have added the file `InstGenExample.py` which contains generation code, and the parameters to each of the 3 competition instances.
+The file is availalbe at the root folder of pyRDDLGym (with the `GymExample.py` file). Note that only the version in the IPPC2023 branch contains the competition parameters.
+
 Competitors should self-report training specifications (how many machines and machine
 specifications).
 
