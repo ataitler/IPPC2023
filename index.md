@@ -172,7 +172,7 @@ code of submitted planners must be released under a license allowing free non-co
 [Final abstract submission](https://forms.gle/GWmCJq1rXEAHqFJp7), due June 13, 2023.
 
 As a conclusion for the iniail submission, we emphesize that all Abstracts must comply with the instructions above. Think of the abstract as a short 2pages+references paper presenting your method.
-For your convenience we have created an example for an abstract, you can use it as template if you wish - [Latex](https://github.com/ataitler/IPPC2023/tree/main/abstracts/latex) | Word.
+For your convenience we have created an example for an abstract, you can use it as template if you wish - [Latex](Abstracts/IPPC_Abstract_Example.zip) | Word.
 
 
 ### Final Competition Domains
