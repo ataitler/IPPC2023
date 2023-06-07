@@ -218,13 +218,13 @@ We expect that your planner is capable of generating non-noop (potentially rando
 
 ### Competition Run and Logistics
 
-The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th 8:00 AM EST,
+The competition week will take place Monday-Thursday June 5 - June 8 2023. Starting June 5th 8:00 AM EDT,
 3 instances will be release for all 8 domains. Competitors will have the 4 days to tune their 
 methods for the 3 instances. At the end of the four days a docker image of maximum 2GB, with the 
-tuned method will be submitted. All submissions must be finalized by June 8th 8:00 PM EST.
+tuned method will be submitted. All submissions must be finalized by June 8th 8:00 PM EDT.
 Please make sure your submission is based on the template in the [demo NoOp docker example](https://github.com/ataitler/RDDL-demo-agent).
 
-[Competition submission](https://forms.gle/CpaR6YSaA571ytuA8), due June 8th, 8 PM EST 2023.
+[Competition submission](https://forms.gle/CpaR6YSaA571ytuA8), due June 8th, 8 PM EDT 2023.
 
 The competition version of pyRDDLGym, containing the competition instances is available at the pyRDDLGym git repository under the branch IPPC2023:
 
