@@ -33,7 +33,7 @@ We invite interested competitors to join the competition discussion:
 | Planner abstract dubmission                   | May 1, 2023      |
 | Contest run                                   | June 5-8, 2023   |
 | Final planner abstract dubmission             | June 13, 2023    |
-| Results announced                             | July 12, 2023    |
+| Results announced                             | July 11, 2023    |
 
 
 
