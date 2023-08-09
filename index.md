@@ -283,7 +283,7 @@ Normalized domain scores will be computed as an average of normalized instance s
 An overall competition score will be computed as an average of normalized domain scores.
 
 
-### Results Announcement
+<!---### Results Announcement
 
 By the competition registration deadline, we will release code for computing all scores above from
 competition traces for each competitor.
@@ -292,6 +292,16 @@ At the ICAPS conference (July 8-13), we will announce winners per domain (by dom
 overall winner (by competition score). At this time, we will also publicly release traces of all trails for
 the competitors to allow reproduction and verification of score computations and to facilitate trace
 analysis of competitors.
+--->
+
+### Results
+The results were presented at the 33rd International Conference on Automated Planning and Scheduling ([ICAPS](https://icaps23.icaps-conference.org/)) on July 11 in Prague. The [presentation slides](/results/IPPC2023_results.pdf) of this talk contain additional details.
+
+<h2 align="center">Winner</h2>
+
+__DiSProD__ ([planner abstract](/results/IPCC_Abstract_Final_DiSProd.pdf), code TBD)
+_Palash Chatterjee, Ashutosh Chapagain, Roni Khardon_
+Indiana University, Bloomington
 
 
 ## Organizers
