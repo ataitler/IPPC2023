@@ -299,7 +299,7 @@ The results were presented at the 33rd International Conference on Automated Pla
 
 The winners:
 
-- __DiSProD__ ([planner abstract](/results/IPCC_Abstract_Final_DiSProd.pdf), code TBD) <br />
+- __DiSProD__ ([planner abstract](/results/IPCC_Abstract_Final_DiSProd.pdf), [code](https://github.com/pecey/DiSProD-agent-IPPC-23)) <br />
 _Palash Chatterjee, Ashutosh Chapagain, Roni Khardon_ <br />
 Indiana University, Bloomington 
 
