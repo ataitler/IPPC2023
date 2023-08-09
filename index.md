@@ -299,9 +299,9 @@ The results were presented at the 33rd International Conference on Automated Pla
 
 <h2 align="center">Winner</h2>
 
-__DiSProD__ ([planner abstract](/results/IPCC_Abstract_Final_DiSProd.pdf), code TBD)
-_Palash Chatterjee, Ashutosh Chapagain, Roni Khardon_
-Indiana University, Bloomington
+__DiSProD__ ([planner abstract](/results/IPCC_Abstract_Final_DiSProd.pdf), code TBD) <br />
+_Palash Chatterjee, Ashutosh Chapagain, Roni Khardon_ <br />
+Indiana University, Bloomington 
 
 
 ## Organizers
