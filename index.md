@@ -297,9 +297,9 @@ analysis of competitors.
 ### Results
 The results were presented at the 33rd International Conference on Automated Planning and Scheduling ([ICAPS](https://icaps23.icaps-conference.org/)) on July 11 in Prague. The [presentation slides](/results/IPPC2023_results.pdf) of this talk contain additional details.
 
-<h2 align="center">Winner</h2>
+The winners:
 
-__DiSProD__ ([planner abstract](/results/IPCC_Abstract_Final_DiSProd.pdf), code TBD) <br />
+- __DiSProD__ ([planner abstract](/results/IPCC_Abstract_Final_DiSProd.pdf), code TBD) <br />
 _Palash Chatterjee, Ashutosh Chapagain, Roni Khardon_ <br />
 Indiana University, Bloomington 
 
