@@ -14,7 +14,7 @@ pip install xaddpy
 
 In this article, we are going to walk you through how you can use `xaddpy` to compile a CPF of a grounded fluent into an XADD node. 
 
-For example, let's look at the [Wildfire](/wildfire.md) domain and the instance file provided [here](https://github.com/ataitler/pyRDDLGym/tree/main/pyRDDLGym/Examples/Wildfire/instance0.rddl) which has 3 x 3 locations.
+For example, let's look at the [Wildfire](/wildfire.md) domain and the instance file provided [here](https://github.com/pyrddlgym-project/pyRDDLGym/tree/main/pyRDDLGym/Examples/Wildfire/instance0.rddl) which has 3 x 3 locations.
 
 <div style="width:100%;text-align:center;">
   <a href="images/wildfire_image.gif">
@@ -153,7 +153,7 @@ Very neat!
 
 Although the Wildfire example nicely shows how XADD can be used to represent the CPFs of the domain, it only contains Boolean variables. In this part, we will show another example domain that has continuous fluents.
 
-The domain we want to look at is the [UAV mixed](/uav.md) domain and the instance file is provided [here](https://github.com/ataitler/pyRDDLGym/tree/main/pyRDDLGym/Examples/UAV/Mixed/instance0.rddl).
+The domain we want to look at is the [UAV mixed](/uav.md) domain and the instance file is provided [here](https://github.com/pyrddlgym-project/pyRDDLGym/tree/main/pyRDDLGym/Examples/UAV/Mixed/instance0.rddl).
 
 If we follow the same procedure described above for the Wildfire domain with the domain name being replaced by `'UAV mixed'`, then we can compile the domain/instance in XADD. The overall DBN (dynamic Bayes net) structure of this instance is shown below.
 
