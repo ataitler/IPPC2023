@@ -228,7 +228,7 @@ Please make sure your submission is based on the template in the [demo NoOp dock
 
 The competition version of pyRDDLGym, containing the competition instances is available at the pyRDDLGym git repository under the branch IPPC2023:
 
-[Competition pyRDDLGym](https://github.com/ataitler/pyRDDLGym/tree/IPPC2023)
+[Competition pyRDDLGym](https://github.com/pyrddlgym-project/pyRDDLGym/tree/IPPC2023)
 
 For the 4 days of the competition you will have access to 3 of the 5 evaluation instances through the IPPC2023 branch.
 The instances will be indexed 1,3,5 while 2,4 are hidden and will be published only after the submission deadline has passed.
