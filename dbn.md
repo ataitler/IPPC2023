@@ -67,7 +67,7 @@ pip install xaddpy
 
 ## Visualizing DBNs with XADD
 
-With the necessary tools being installed, we can now go ahead and draw DBN diagrams of various RDDL domain/instances. As a running example, we show how you can visualize a [Wildfire](/wildfire.md) instance as defined in [pyRDDLGym/Examples/Wildfire](https://github.com/ataitler/pyRDDLGym/tree/main/pyRDDLGym/Examples/Wildfire). 
+With the necessary tools being installed, we can now go ahead and draw DBN diagrams of various RDDL domain/instances. As a running example, we show how you can visualize a [Wildfire](/wildfire.md) instance as defined in [pyRDDLGym/Examples/Wildfire](https://github.com/pyrddlgym-project/pyRDDLGym/tree/main/pyRDDLGym/Examples/Wildfire). 
 
 ### Instantiate RDDL2Graph object
 
@@ -106,7 +106,7 @@ huh, Nice! You can see from this diagram that the next state transition of the b
 
 
 
-To give you a taste of another example, here's the DBN visualization of the [Power Generation instance](https://github.com/ataitler/pyRDDLGym/tree/main/pyRDDLGym/Examples/Power_gen), in which intermediate variables are placed in the middle column:
+To give you a taste of another example, here's the DBN visualization of the [Power Generation instance](https://github.com/pyrddlgym-project/pyRDDLGym/tree/main/pyRDDLGym/Examples/Power_gen), in which intermediate variables are placed in the middle column:
 
 ![](images/PowerGeneration_inst_0.png "Power Generation")
 
