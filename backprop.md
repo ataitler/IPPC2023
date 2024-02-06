@@ -58,7 +58,7 @@ The baseline planner in pyRDDLGym automatically applies the reparameterization t
 
 To run the JAX experiments, in addition to the basic requirements you will also need to install JAX, tensorflow and tensorflow-probability; we recommend installing the latest versions of these packages through pip. 
 
-In order to get started with the JAX planner, a config file must first be generated that specifies all the parameters we wish to pass to the planner. Parameters include, for instance, the maximum number of gradient descent steps to perform, the batch size, and the learning rate. For example, let's look at the [Wildfire](/wildfire.md) domain and the instance file provided [here](https://github.com/ataitler/pyRDDLGym/tree/main/pyRDDLGym/Examples/Wildfire/instance0.rddl) which has 3 x 3 locations. The config file for this domain would look as follows
+In order to get started with the JAX planner, a config file must first be generated that specifies all the parameters we wish to pass to the planner. Parameters include, for instance, the maximum number of gradient descent steps to perform, the batch size, and the learning rate. For example, let's look at the [Wildfire](/wildfire.md) domain and the instance file provided [here](https://github.com/pyrddlgym-project/pyRDDLGym/tree/main/pyRDDLGym/Examples/Wildfire/instance0.rddl) which has 3 x 3 locations. The config file for this domain would look as follows
 
 ```shell
 [Environment]
@@ -81,7 +81,7 @@ epochs=3000
 step=100
 ```
 
-Some config files are included in pyRDDLGym for your convenience; the file for the Wildfire problem can be found [here](https://github.com/ataitler/pyRDDLGym/tree/main/pyRDDLGym/Planner/Wildfire.cfg). 
+Some config files are included in pyRDDLGym for your convenience; the file for the Wildfire problem can be found [here](https://github.com/pyrddlgym-project/pyRDDLGym/tree/main/pyRDDLGym/Planner/Wildfire.cfg). 
 
 The first thing we will do is to extract and initialize the domain info from the config file as follows:
 
