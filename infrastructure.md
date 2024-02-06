@@ -76,10 +76,10 @@ conda create -n rddl python=3.8
 conda activate rddl
 pip install pyrddlgym
 ```
-2. Cloning directly from Github `https://github.com/ataitler/pyRDDLGym.git`
+2. Cloning directly from Github `https://github.com/pyrddlgym-project/pyRDDLGym.git`
 
 
-Please refer to the [README page](https://github.com/ataitler/pyRDDLGym) for information on the framework contents, requirements, examples, and more.
+Please refer to the [README page](https://github.com/pyrddlgym-project/pyRDDLGym) for information on the framework contents, requirements, examples, and more.
 
 ## Basic usage
 
