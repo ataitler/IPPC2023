@@ -93,38 +93,45 @@ Alternatively you can install pyRDDLGym using pip:
 ```
 $ pip install pyRDDLGym
 ```
-PyRDDLGYm follows closely to the gym interfaces. Below is an example of running wildfire domain using an random agent.
+PyRDDLGym follows closely to the gym interfaces. 
+PyRDDLGym uses in the background the repository of problems called rddlrepository. In this tutorial will will illustrate everything with the wilfire example, thus will will install reddlrepository as well.
+```
+$ pip install rddlrepository
+```
+Below is an example of running the wildfire domain using an random agent.
 
 ```python
-from pyRDDLGym import RDDLEnv
-from pyRDDLGym import ExampleManager
-from pyRDDLGym.Policies.Agents import RandomAgent
+import pyRDDLGym
+from pyRDDLGym.core.policy import RandomAgent
 
-ENV = 'Wildfire'
+ENV = 'Wildfire_MDP_ippc2014'
 
-# get the environment infos
-EnvInfo = ExampleManager.GetEnvInfo(ENV)
+# set up the environment class, choose instance 1
+myEnv = pyRDDLGym.make(ENV, 1)
 
-# set up the environment class, choose instance 0 because every example has at least one example instance
-myEnv = RDDLEnv.RDDLEnv(domain=EnvInfo.get_domain(), instance=EnvInfo.get_instance(0))
-# set up the environment visualizer
-myEnv.set_visualizer(EnvInfo.get_visualizer())
-# set up an example aget
-agent = RandomAgent(action_space=myEnv.action_space, num_actions=myEnv.NumConcurrentActions)
+# set up an example agent
+agent = RandomAgent(action_space=myEnv.action_space,
+                        num_actions=myEnv.max_allowed_actions,
+                        seed=42)
 
 total_reward = 0
-state = myEnv.reset()
+state, _ = myEnv.reset()
 
 for step in range(myEnv.horizon):
-    myEnv.render()
+    myEnv.render(to_display=False)
     action = agent.sample_action()
-    next_state, reward, done, info = myEnv.step(action)
+    next_state, reward, done, info, _ = myEnv.step(action)
     total_reward += reward
+    print()
+    print(f'step       = {step}')
+    print(f'state      = {state}')
+    print(f'action     = {action}')
+    print(f'next state = {next_state}')
+    print(f'reward     = {reward}')
     state = next_state
     if done:
         break
-
-print("episode ended with reward {}".format(total_reward))
+print(f'episode ended with reward {total_reward}')
 myEnv.close()
 ```
 
@@ -415,23 +422,17 @@ pyRDDLGym currently do not support syntax checking, this feature might be includ
 ### 2.5.2 Debugging Logical Errors: Visualization
 Once the code no longer contains syntax errors, it can be run without compile-time or run-time issues. However, this does not indicate that the code is logically correct. Thus, we must now run the code and study the output to ensure that it is performing as desired. PyDDGYM comes with a default text visualizer where the state dictionary is displayed on a white canvas. PyRDDLGym have prebuild visualizers for common RDDL domains. These visualizers can be found in /Visualizer folder. Users can also build their own visualizer classes in /Visualizer.
 To generate an visual output of the domain, we can run the following code:
-```
-from pyRDDLGym import RDDLEnv
-from pyRDDLGym import ExampleManager
-from pyRDDLGym.Policies.Agents import RandomAgent
+```python
+import pyRDDLGym
+from pyRDDLGym.core.policy import RandomAgent
 
-ENV = 'Wildfire'
+ENV = 'Wildfire_MDP_ippc2014'
 
-# get the environment infos
-EnvInfo = ExampleManager.GetEnvInfo(ENV)
-
-# set up the environment class, choose instance 0 because every example has at least one example instance
-myEnv = RDDLEnv.RDDLEnv(domain=EnvInfo.get_domain(), instance=EnvInfo.get_instance(0))
-# set up the environment visualizer
-myEnv.set_visualizer(EnvInfo.get_visualizer())
+# set up the environment class, choose instance 1
+myEnv = pyRDDLGym.make(ENV, 1)# set up the environment visualizer
 
 # generate initial state
-state = myEnv.reset()
+state, _ = myEnv.reset()
 
 total_reward = 0
 
@@ -461,21 +462,29 @@ In this lab, we will explore the RDDL language by making modifications to Wildfi
 You should be familiar with the Wildfire overview before completing these exercises.
 
 ### 3.1 Setup RDDL and PROST
-The PyRDDL and PROST planners were combined for a course module that focuses on probabilistic planning, and the following exercises rely on this combined package. To set things up, use the following steps:
+As part of the pyRDDLGym ecosystem, the planner PROST is available in a docker form. To set things up, please review and follow the instructions in:
+[pyRDDLGym-PROST](https://github.com/pyrddlgym-project/pyRDDLGym-prost)
+
+<!---The PyRDDL and PROST planners were combined for a course module that focuses on probabilistic planning, and the following exercises rely on this combined package. To set things up, use the following steps:
 
 1. Install Docker ([instructions](https://docs.docker.com/get-docker/))
 1. Pull the Docker image for the course module: `docker pull cjmuise/cisc813-rddlprost`
 1. Navigate to the directory where you want to store the rddl files
 1. Run the Docker image: `docker run -it -v $(pwd):/PROJECT cjmuise/cisc813-rddlprost`
 
-You now have access to two commands: `rddlprost` and `viz`. The first will run both PyRDDL and PROST on a given domain and instance, while the latter will visualize the traces generated by the planning process. Example usage:
+You now have access to two commands: `rddlprost` and `viz`. The first will run both PyRDDL and PROST on a given domain and instance, while the latter will visualize the traces generated by the planning process. Example usage: -->
 
+The entry point of the docker allows for running PROST with pyRDDLGym, you can use the following command for that:
+```bash
+bash runprost.sh <container name> <rddl dir> <rounds> <prost args> <output dir>
+```
+<!---
 ```bash
 rddlprost domain.rddl instance.rddl 1 10
 viz data.json
 ```
 
-The first command uses two parameters after the `.rddl` files to specify (1) the number of trials/episodes to run and (2) the time limit for PROST. The second command takes a single parameter, which is the path to the JSON file generated by the first command.
+The first command uses two parameters after the `.rddl` files to specify (1) the number of trials/episodes to run and (2) the time limit for PROST. The second command takes a single parameter, which is the path to the JSON file generated by the first command.-->
 
 ### 3.2 Modifying Wildfire
 
@@ -533,10 +542,10 @@ Not all of them will work, but many of the MDP ones will.
 ## 4 Appendix (Wilfire RDDL)
 
 ### 4.1 Domain
-[wildfire domain link](https://github.com/ataitler/pyRDDLGym/blob/main/pyRDDLGym/Examples/Wildfire/domain.rddl)
+[wildfire domain link](https://github.com/pyrddlgym-project/rddlrepository/blob/main/rddlrepository/archive/competitions/IPPC2014/Wildfire/MDP/domain.rddl)
 
 ### 4.2 Instance
-[wildfire instance link](https://github.com/ataitler/pyRDDLGym/blob/main/pyRDDLGym/Examples/Wildfire/instance0.rddl)
+[wildfire instance link](https://github.com/pyrddlgym-project/rddlrepository/blob/main/rddlrepository/archive/competitions/IPPC2014/Wildfire/MDP/instance1.rddl)
 
 ## 5 Credits
 This tutorial was done in collaboration with Bayaan Shalaby, John Zhou, Jason Zhou, Ayal Taitler, Xiaotian Liu and Scott Sanner. Further contributions to the exercises by [Christian Muise](http://www.haz.ca/).
