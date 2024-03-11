@@ -422,7 +422,7 @@ pyRDDLGym currently do not support syntax checking, this feature might be includ
 ### 2.5.2 Debugging Logical Errors: Visualization
 Once the code no longer contains syntax errors, it can be run without compile-time or run-time issues. However, this does not indicate that the code is logically correct. Thus, we must now run the code and study the output to ensure that it is performing as desired. PyDDGYM comes with a default text visualizer where the state dictionary is displayed on a white canvas. PyRDDLGym have prebuild visualizers for common RDDL domains. These visualizers can be found in /Visualizer folder. Users can also build their own visualizer classes in /Visualizer.
 To generate an visual output of the domain, we can run the following code:
-```
+```python
 import pyRDDLGym
 from pyRDDLGym.core.policy import RandomAgent
 
