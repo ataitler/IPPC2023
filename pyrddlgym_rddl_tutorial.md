@@ -183,7 +183,7 @@ Typically, the first fluent type to be defined is the non-fluent type, which rep
 
 ```
 46  // Action costs and penalties
-47  COST-UTOUT            : {non-fluent, real, default =   -5 }; // Cost to cut-out fuel from a cell
+47  COST-CUTOUT            : {non-fluent, real, default =   -5 }; // Cost to cut-out fuel from a cell
 48  COST-PUTOUT            : {non-fluent, real, default =  -10 }; // Cost to put-out a fire from a cell
 50  PENALTY-TARGET_BURN    : {non-fluent, real, default = -100 }; // Penalty for each target cell that is burning
 51  PENALTY-NONTARGET_BURN : {non-fluent, real, default =   -5 }; // Penalty for each non-target cell that is burning
@@ -264,7 +264,7 @@ The reward was defined in the introduction of this documentation. It is only rep
 94        + [sum_{?x: x-pos, ?y: y-pos} [ PENALTY_NONTARGET_BURN*[ burning(?x, ?y) ^ ~TARGET(?x, ?y) ]]];
 ```
 
-### 2.3.6 state-action-constraints Block* (deprecated)
+<!--### 2.3.6 state-action-constraints Block* (deprecated)
 
 The state-action-constraints block concludes the domain definition. It asserts logical expressions that must hold true at every time step. In our case, constraints include the fact that you cannot put-out a cell if it is not burning and you cannot cut-out a cell if it is already out of fuel.
  ```
@@ -278,14 +278,28 @@ The state-action-constraints block concludes the domain definition. It asserts l
 103    };
 104  } // End of domain block
 ```
-\* The state-action-constraints block is deprecated and is not supported by pyRDDLGym in favor of action-preconditions and state-invariants blocks (see next sub-section).
+\* The state-action-constraints block is deprecated and is not supported by pyRDDLGym in favor of action-preconditions and state-invariants blocks (see next sub-section). -->
 
-### 2.3.7 action-preconditions and state-invariants Blocks
-The state-action-constraints block has been included for backwards compatibility with previous RDDL specifications.  However, it is preferred instead if state-action-constraints are moved into action-preconditions or state-invariants blocks.
+### 2.3.6 action-preconditions and state-invariants Blocks
+<!---The state-action-constraints block has been included for backwards compatibility with previous RDDL specifications.  However, it is preferred instead if state-action-constraints are moved into action-preconditions or state-invariants blocks.--->
 
 The action-preconditions block is used for specifying constraints that restrict single or joint action usage in a particular state and is only checked when an action is executed.
 
 The state-invariants block is used for constraints that do not include any action fluents and thus represent state property assertions that should never be violated.  These constraints are checked in the initial state and every time a next state is reached.  The simulator should exit if a state-invariant is violated and hence the author should specify state-invariants as a way to verify expected domain properties.
+
+These blocks concludes the domain definition. In our case, constraints include the fact that you cannot put-out a cell if it is not burning and you cannot cut-out a cell if it is already out of fuel.
+As both of these constraints are on the actions, they will be added as an action-preconditions block:
+ ```
+96    action-preconditions {
+97
+98        // Can only put-out if the cell is currently burning
+99        forall_{?x : x-pos, ?y : y-pos} [put-out(?x,?y) => burning(?x,?y)];
+100
+101        // Can only cut-out if the cell is not already out of fuel
+102        forall_{?x : x-pos, ?y : y-pos} [cut-out(?x,?y) => ~out-of-fuel(?x,?y)];
+103    };
+104  } // End of domain block
+```
 
 ## 2.4 problem Blocks
 
