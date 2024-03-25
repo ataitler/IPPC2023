@@ -264,9 +264,11 @@ The reward was defined in the introduction of this documentation. It is only rep
 94        + [sum_{?x: x-pos, ?y: y-pos} [ PENALTY_NONTARGET_BURN*[ burning(?x, ?y) ^ ~TARGET(?x, ?y) ]]];
 ```
 
-<!--### 2.3.6 state-action-constraints Block* (deprecated)
+### 2.3.6 state-action-constraints Block* (deprecated)
 
-The state-action-constraints block concludes the domain definition. It asserts logical expressions that must hold true at every time step. In our case, constraints include the fact that you cannot put-out a cell if it is not burning and you cannot cut-out a cell if it is already out of fuel.
+The state-action-constraints block is an old language component, now deprecated. It is provided here a a documentation and backward compatibility for domains described before this language change. The new way of specifiying constraints is given in the next section. 
+
+state-action-constraints asserts logical expressions that must hold true at every time step. In our case, constraints include the fact that you cannot put-out a cell if it is not burning and you cannot cut-out a cell if it is already out of fuel.
  ```
 96    state-action-constraints {
 97
@@ -278,10 +280,9 @@ The state-action-constraints block concludes the domain definition. It asserts l
 103    };
 104  } // End of domain block
 ```
-\* The state-action-constraints block is deprecated and is not supported by pyRDDLGym in favor of action-preconditions and state-invariants blocks (see next sub-section). -->
+
 
 ### 2.3.6 action-preconditions and state-invariants Blocks
-<!---The state-action-constraints block has been included for backwards compatibility with previous RDDL specifications.  However, it is preferred instead if state-action-constraints are moved into action-preconditions or state-invariants blocks.--->
 
 The action-preconditions block is used for specifying constraints that restrict single or joint action usage in a particular state and is only checked when an action is executed.
 
