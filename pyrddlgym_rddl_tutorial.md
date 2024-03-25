@@ -282,7 +282,7 @@ state-action-constraints asserts logical expressions that must hold true at ever
 ```
 
 
-### 2.3.6 action-preconditions and state-invariants Blocks
+### 2.3.7 action-preconditions and state-invariants Blocks
 
 The action-preconditions block is used for specifying constraints that restrict single or joint action usage in a particular state and is only checked when an action is executed.
 
