@@ -284,12 +284,9 @@ state-action-constraints asserts logical expressions that must hold true at ever
 
 ### 2.3.7 action-preconditions and state-invariants Blocks
 
-The action-preconditions block is used for specifying constraints that restrict single or joint action usage in a particular state and is only checked when an action is executed.
+<!--The action-preconditions block is used for specifying constraints that restrict single or joint action usage in a particular state and is only checked when an action is executed. -->
 
-The state-invariants block is used for constraints that do not include any action fluents and thus represent state property assertions that should never be violated.  These constraints are checked in the initial state and every time a next state is reached.  The simulator should exit if a state-invariant is violated and hence the author should specify state-invariants as a way to verify expected domain properties.
-
-These blocks concludes the domain definition. In our case, constraints include the fact that you cannot put-out a cell if it is not burning and you cannot cut-out a cell if it is already out of fuel.
-As both of these constraints are on the actions, they will be added as an action-preconditions block:
+In the current version of RDDL, the action-preconditions block is used for specifying constraints that restrict single or joint action usage in a particular state and are only checked when an action is executed.  Since the two state-action-constraints specified above both involve action fluents, we would write them in the present version of RDDL in an action-preconditions block as shown below.
  ```
 96    action-preconditions {
 97
@@ -301,6 +298,23 @@ As both of these constraints are on the actions, they will be added as an action
 103    };
 104  } // End of domain block
 ```
+
+In contrast, the state-invariants block is used for constraints that **do not include any action fluents** and thus represent state property assertions that should never be violated. These constraints are checked in the initial state and every time a next state is reached. The simulator should exit if a state-invariant is violated and hence the author should specify state-invariants as a way to verify expected domain properties (i.e., one can think of them as C-style assertions).  
+
+
+<!--The state-invariants block is used for constraints that do not include any action fluents and thus represent state property assertions that should never be violated.  These constraints are checked in the initial state and every time a next state is reached.  The simulator should exit if a state-invariant is violated and hence the author should specify state-invariants as a way to verify expected domain properties. -->
+
+While we do not have any state-invariants for the Wildfire domain, one may consider an [Elevators domain](https://github.com/pyrddlgym-project/rddlrepository/blob/main/rddlrepository/archive/competitions/IPPC2014/Elevators/MDP/domain.rddl) where a state-invariant expresses that the same Elevator cannot be present at two floors in the same time step; this is clearly an illegal and unintended state and the simulator should exit when this state-invariant is violated since it is evidence of either a domain design or initial state specification error.
+
+```
+state-invariants {
+   forall_{?e : elevator} ([sum_{?f: floor} elevator-at-floor(?e, ?f)] == 1);  
+}
+```
+
+<!--These blocks concludes the domain definition. In our case, constraints include the fact that you cannot put-out a cell if it is not burning and you cannot cut-out a cell if it is already out of fuel.
+As both of these constraints are on the actions, they will be added as an action-preconditions block: -->
+
 
 ## 2.4 problem Blocks
 
